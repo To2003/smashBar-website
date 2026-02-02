@@ -9,19 +9,21 @@ import { FloatingActionBar } from "./floating-action-bar"
 import { OrderDrawer } from "./order-drawer"
 import { NotificationBanner } from "./notification-banner"
 import { useMenu } from "@/hooks/useMenu" // Importamos el Hook real
-import { Beef, Wine, Coffee, Cookie, UtensilsCrossed, Beer, Sandwich } from "lucide-react"
+import { Beef, Wine, Coffee, Cookie, UtensilsCrossed, Beer, Sandwich, WheatOff, Soup } from "lucide-react"
 
-// Definimos las categorías coincidiendo EXACTAMENTE con las keys de tu 'menu' (config.ts)
+// Esta lista define las pestañas del menú.
+// IMPORTANTE: Los 'id' deben coincidir EXACTAMENTE con las keys de tu archivo lib/config.ts
 const categories = [
-  { id: "hamburguesas", label: "Burgers", icon: Beef },
-  { id: "paraPicar", label: "Picoteo", icon: UtensilsCrossed }, // Coincide con SHEET_NAMES.paraPicar
+  { id: "hamburguesas", label: "Hamburguesas", icon: Beef },
+  { id: "paraPicar", label: "Para Picar", icon: UtensilsCrossed },
   { id: "sandwiches", label: "Sandwiches", icon: Sandwich },
-  { id: "pizzas", label: "Pizzas", icon: UtensilsCrossed },
-  { id: "platos", label: "Platos", icon: UtensilsCrossed },
-  { id: "bebidas", label: "Bebidas", icon: Coffee },
+  { id: "platos", label: "Platos", icon: Soup }, // Incluye Milanesas y Ensaladas
+  { id: "sinTacc", label: "Sin TACC", icon: WheatOff }, // <--- ¡Aquí está la que faltaba!
+  { id: "postres", label: "Postres", icon: Cookie },
+  { id: "bebidas", label: "Bebidas", icon: Coffee }, // Gaseosas, Agua, etc.
   { id: "cervezas", label: "Birras", icon: Beer },
   { id: "tragos", label: "Tragos", icon: Wine },
-  { id: "postres", label: "Postres", icon: Cookie },
+  { id: "vinos", label: "Vinos", icon: Wine },
 ]
 
 export function ClientMode() {
